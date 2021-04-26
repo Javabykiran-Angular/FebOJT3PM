@@ -1,0 +1,10 @@
+"use strict";
+exports.__esModule = true;
+var Circle_1 = require("./Circle");
+var Rectangle_1 = require("./Rectangle");
+var objCricle = new Circle_1.Circle(2);
+objCricle.MyArea();
+objCricle.Display();
+var ObjRect = new Rectangle_1.Rectangle(2, 3);
+ObjRect.MyArea();
+ObjRect.Display();
