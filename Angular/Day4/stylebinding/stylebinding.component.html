@@ -1,0 +1,29 @@
+<p>stylebinding works!</p>
+<!-- sytle binding is used to apply style dynamically  -->
+<!-- syntax it always work with style attribute that given by the html  -->
+<!-- syntax => [style.css_property]="property_name" -->
+
+<h2 [style.color]="mycolor">
+    Style Binding </h2>
+
+ <h2 [style.color]="rating<4?'red':'green'"> Apply Style Binding on Condition </h2>   
+
+ <h2 [style.color]="rating1<4?mycolor:mycolor1">
+      Apply Style Binding on Condition </h2>
+   <hr>
+ 
+   <h1> Apply Multiple CSS Properties </h1>
+
+   <!-- ngStyle Its attribute directive
+    directive => it takes to set object as property -->
+
+
+    <div [ngStyle]="obj">
+        Apply ngStyle Attribute Directive
+    </div> <br>
+
+    <div [ngStyle]="rating2<4?obj:obj1">
+        Apply ngStyle Attribute Directive
+    </div>
+
+    
