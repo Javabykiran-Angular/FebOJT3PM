@@ -1,0 +1,21 @@
+<p>class-binding works!</p>
+
+<!-- syntax => class attribute is given  by html
+        [class]="property_name" -->
+
+<h2 [class]="myclass">
+    Apply Class Binding</h2>
+
+<h2 [class.danger]="rating<4"
+    [class.warning]="rating>4" >
+    Apply Class Binding Using 
+    Condition</h2>
+<hr>
+
+<!-- ngClass=> It is a directive given by 
+    Angular to set a multiple css classess -->
+
+    <div [ngClass]="obj">
+        Apply Class Binding Using ngClass
+    </div>
+
