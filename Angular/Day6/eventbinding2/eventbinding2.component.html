@@ -1,0 +1,32 @@
+<p>eventbinding2 works!</p>
+
+<img src="../../assets/bg.jpeg" 
+alt="" (click)="onImageClick()">
+
+<!-- $event => it is special variable 
+    given by the angular.
+It gives Current dom element information -->
+<br>
+
+<button (click)="onLogin($event)" 
+value="ClickEvent!!!">Log In</button> <br> <br>
+
+<!-- change event -->
+
+<input type="text" 
+placeholder="Enter the Username" 
+(change)="onChange()">
+<hr>
+<!-- template reference variable -->
+
+<input type="text" #myinput
+placeholder="Enter the Username">
+<br><br>
+<button (click)="onSend(myinput)">Send</button>
+<br><br>
+<button (click)="onSend1(myinput.value)">Send1</button>
+<br><br>
+
+<input type="text" #username
+(change)="onMychange(username)"
+placeholder="Enter the name...." >
