@@ -1,0 +1,36 @@
+<p>event-binding3 works!</p>
+
+<input type="text" 
+placeholder="Enter name..."
+ (keyup)="onKeyUp()"> <br><br>
+
+ <input type="text" placeholder="Enter the Name" 
+ (keydown)="onKeyDown()">
+ <hr>
+
+ <label for="">Number 1 :: </label>&nbsp;&nbsp;
+ <input type="number" #num1
+ placeholder="Enter A number1..."><br><br>
+
+ <label for="">Number 2 :: </label>&nbsp;&nbsp;
+ <input type="number" #num2
+ placeholder="Enter A number2..."><br><br>
+
+ <button (click)="onAddition(num1.value,num2.value)" >Addition</button><br><br>
+
+ <label for="">Result:: </label>&nbsp;&nbsp;
+ 
+ <input type="number" 
+ [style.color]="result<10?mycolor:mycolor2"
+ placeholder="Result" 
+ [value]="result" readonly>
+
+ <br><br>
+ <h2>Result:: {{result}} </h2> <hr>
+
+ <h2>==========Two Way Binding ============</h2>
+ <!-- ngModel => It is directive used for two way binding -->
+ <input type="text" [(ngModel)]="name"
+ placeholder="Enter the Name.."> <br>
+
+ {{name}}
