@@ -1,0 +1,24 @@
+<p>switch-directive works!</p>
+
+<br>
+<label for="">Color:: </label>&nbsp;&nbsp;
+<input type="text" #inputcolor
+placeholder="Enter the Color Name"> <br><br>
+<button 
+(click)="OnClick(inputcolor.value)">
+Submit</button> <hr>
+
+<div [ngSwitch]="choice">
+    <div *ngSwitchCase="'red'" [style.background]="choice">
+        Your Color code is {{choice}} </div>
+    <div *ngSwitchCase="'green'" [style.background]="choice">
+        Your Color code is {{choice}} </div>
+    <div *ngSwitchCase="'blue'" [style.background]="choice">
+        Your Color code is {{choice}} </div>
+    <div *ngSwitchDefault 
+    [style.background]="choice==''?'black':'orange'"
+    [style.color]="choice==''?'white':'black'"
+    >
+    You are entered wrong color name {{choice}}
+ </div>
+</div>
