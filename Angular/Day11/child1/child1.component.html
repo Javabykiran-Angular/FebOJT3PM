@@ -1,0 +1,26 @@
+<p>child1 works!</p>
+
+<h2> {{parentdata}} </h2>
+
+<h2>Name :: {{parentjsonData.name}} </h2>
+<h2>ID :: {{parentjsonData.id}} </h2>
+<h2> Role :: {{parentjsonData.role}} </h2>
+
+<table border="1px">
+   <thead>
+       <th>Sr No</th>
+       <th>ID</th>
+       <th>Name</th>
+       <th>Role</th>
+   </thead> 
+   <tbody>
+       <tr *ngFor="let item of parentArrObj;let i=index">
+            <td> {{i+1}} </td>
+            <td> {{item.id}} </td>
+            <td> {{item.name}} </td>
+            <td> {{item.role}} </td>
+       </tr>
+   </tbody>
+</table>
+
+<h2>Data From Parent => {{userdata}} </h2>

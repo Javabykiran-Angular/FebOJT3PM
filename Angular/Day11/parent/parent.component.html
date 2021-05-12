@@ -1,0 +1,20 @@
+<p>parent works!</p>
+
+<label for="">Username :: &nbsp;</label>
+<input type="text" #username
+placeholder="Enter the Username..."> <br><br>
+<button (click)="onClick(username.value)">Submit</button>
+
+
+
+
+<hr>
+<!-- <app-child1 [parentdata]="str" ></app-child1> -->
+<!-- <app-child1
+ [parentjsonData]="parentjson">
+</app-child1> -->
+<!-- <app-child1
+[parentArrObj]="arrobj" >
+</app-child1> -->
+
+<app-child1 [userdata]="myname"></app-child1>
