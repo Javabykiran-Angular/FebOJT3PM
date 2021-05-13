@@ -1,0 +1,44 @@
+<p>parent works!</p>
+
+<label for="">Username :: &nbsp;</label>
+<input type="text" #username
+placeholder="Enter the Username..."> <br><br>
+<button (click)="onClick(username.value)">Submit</button>
+<hr>
+
+<h2>Data</h2>
+
+<h2> {{datafromchild}} </h2>
+
+<div>
+    <h3>Name ::{{jsonfromChild.name}} </h3>
+    <h3 [style.background]="jsonfromChild.id<5 && jsonfromChild.id!='undefined'?'red':'green'">ID :: {{jsonfromChild.id}} </h3>
+    <h3>Role :: {{jsonfromChild.role}} </h3>
+</div>
+
+
+
+<hr>
+<!-- <app-child1 [parentdata]="str" ></app-child1> -->
+<!-- <app-child1
+ [parentjsonData]="parentjson">
+</app-child1> -->
+<!-- <app-child1
+[parentArrObj]="arrobj" >
+</app-child1> -->
+
+<!-- <app-child1 [userdata]="myname"></app-child1> -->
+
+<app-child2
+ (childEvent)="datafromchild=$event"
+ (childEvent1)="jsonfromChild=$event">
+</app-child2>
+<hr>
+<hr>
+<h2>Data from child to child</h2>
+
+<h2> {{childofchildData}} </h2>
+
+<hr>
+
+<app-child3 (childd3Event)="onChild3($event)"></app-child3>
