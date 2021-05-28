@@ -1,0 +1,42 @@
+
+
+<div class="container">
+    
+    <div class="row">
+        <div class="col-sm-12 col-md-12 col-lg-12">
+
+            <form >
+
+                <div class="form-group">
+                    <label for="">Username:: </label>
+                    <input type="text" class="form-control"
+                    minlength="3" pattern="admin"
+                    ngModel name="myusername" #username="ngModel" 
+                    placeholder="Enter the Username" required>
+
+                    <div class="alert alert-danger" 
+                    *ngIf="username.touched && !username.valid" >
+                        ** Please enter the Username 
+                        <div *ngIf="username.errors.minlength">
+                                ** Please enter minimum length of 
+                                {{username.errors.minlength.requiredLength}}
+                        </div>
+                        <div *ngIf="username.errors.pattern">
+                            ** Please Enter the appropriate Pattern 
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <button class="btn btn-success">Submit</button>
+
+            </form>
+
+
+        </div>
+
+    </div>
+
+</div>
