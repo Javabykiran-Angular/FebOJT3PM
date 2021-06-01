@@ -1,0 +1,73 @@
+<p>reactive-form works!</p>
+
+<div class="container">
+    <div class="row">
+        <div class="col-sm-6 col-md-6 col-lg-6">
+
+            <form [formGroup]="myreactiveFormGroup" (ngSubmit)="onSubmit()" >
+
+            <div class="form-group">
+                <label for="">UserName::</label>
+                <input type="text" class="form-control"
+                formControlName="username"
+                placeholder="Enter the username..">
+
+                <small class="text-danger"
+                 *ngIf="!myreactiveFormGroup.get('username').valid 
+                 && myreactiveFormGroup.get('username').touched">
+                  <!-- <span *ngIf="myreactiveFormGroup.get('username').errors.required"  >** Please Enter the Username</span> -->
+                  <span *ngIf="myreactiveFormGroup.get('username').errors['required']"  >** Please Enter the Username</span>
+                  <span *ngIf="myreactiveFormGroup.get('username').errors['nameIsNotAllowed']">** This Name is Not Allowed </span>
+                </small>
+  
+
+
+            </div>
+            <div class="form-group">
+                <label for="">Email::</label>
+                <input type="email" class="form-control"
+                formControlName="email"
+                placeholder="Enter the email..">
+
+                <small class="text-danger">
+                  <span *ngIf="!myreactiveFormGroup.get('email').valid && myreactiveFormGroup.get('email').touched" >** Please Enter the Appropriate Email Id</span>
+                </small>
+           
+            </div>
+
+            <div class="radio">
+                <label for="gender1" >
+                  <input type="radio" id="gender1" 
+                  value="Male" 
+                  formControlName="gender" > Male
+                </label>
+              </div>
+
+              <div class="radio">
+                <label for="gender2" >
+                  <input type="radio" id="gender2" 
+                  value="Female" 
+                  formControlName="gender" > Female
+                </label>
+              </div>
+
+              <div class="form-group">
+                <label for="contact" >contact Method</label>
+                <select  id="contact" 
+                class="form-control" 
+                formControlName="course"  >
+                 <!-- <option *ngFor="let item of contactMethod" [value]="item.id">{{item.name}} </option> -->
+
+                 <option *ngFor="let item of Mycourse" [ngValue]="item">{{item.name}} </option>
+
+                </select> 
+              </div>
+
+            <button class="btn btn-success">Submit</button>
+
+        </form>
+        </div>
+
+    </div>
+
+</div>
