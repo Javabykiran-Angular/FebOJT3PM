@@ -1,0 +1,90 @@
+login Api
+
+1 User is valid or not
+2 Register table => DB
+	first name => varchar 20
+	last name => varchar  20
+	id => Int => Autoincrement 5
+	emailid => varchar => unique => 50-100
+	mobile no => 10/11 => 11
+	gender => varchar =>10
+	password => varchar => 20
+	address => varchar => 50
+	city => varchar 20
+	creatated date => date => current Timestamp
+	
+controller
+
+@Autowire
+userServer service;
+
+@RequestMapping(value="/loginCheck",method="Request.Post")
+public json Login(@RequestBody Register r){
+ json obj= service.LoginCheck(r)
+	return obj;
+}
+
+// UserService
+@Service
+class Userservice{
+
+@Autowire
+UserDao dao;
+
+ json LoginCheck(Register r){
+ 
+	Register obj=dao.logincheck(r);
+	
+	if(obj!=null){
+		// msg: 'Valid User',
+		// user : obj
+	}else{
+		//msg: 'Invalid User'
+		// user: null
+	}
+	
+	return json;
+ }
+
+}
+
+@Repository
+class UserDao{
+
+Register logincheck(Register r){
+		
+		Session session=sessionFactory.Opensession();
+		
+		Criteria c=session.createCriteria(Register.class);
+		// r.getemaild
+		// r.getpassword
+		Register reg=c.uniqueResult();
+		
+		return reg;
+		
+ }
+
+
+}
+
+
+{
+	msg:'valid user',
+	user:{
+		lname:....,
+		fname:....,
+		emaild:...
+		....
+	}
+}
+
+
+
+
+
+
+
+
+
+
+	
